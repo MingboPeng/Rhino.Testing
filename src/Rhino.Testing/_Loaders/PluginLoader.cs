@@ -19,6 +19,10 @@ namespace Rhino.Testing
 
         public static string GetRHPPath(string rhpPath)
         {
+            if (File.Exists(rhpPath))
+            {
+                return rhpPath;
+            }
             string rhp = Path.Combine(Configs.Current.RhinoSystemDir, rhpPath);
             if (File.Exists(rhp))
             {
